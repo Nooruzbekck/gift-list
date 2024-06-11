@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IconButton, InputAdornment, TextField, styled } from "@mui/material";
-import { Icons } from "../../assets";
+import { Icons } from "../../../assets";
 
 interface PROPS {
   value: string;
@@ -40,7 +40,7 @@ export const Input: React.FC<PROPS> = ({
               <IconButton onClick={handleTogglePasswordVisibility} edge="end">
                 {error ? (
                   <Icons.InputError />
-                ) : showPassword ? (
+                ) : showPassword ? ( 
                   <Icons.OpenEye />
                 ) : (
                   <Icons.CloseEye />

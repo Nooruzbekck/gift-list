@@ -37,6 +37,7 @@ import LockOpen from "./icons/other/lock-open-icon.svg?react";
 import Logout from "./icons/other/logout-icon.svg?react";
 import RenameIcon from "./icons/other/rename-icon.svg?react";
 import UserIcon from "./icons/other/user-icon.svg?react";
+import UpArrowIcon from "./icons/other/up-arrow.svg?react";
 
 export const Icons = {
   OpenEye,
@@ -54,6 +55,7 @@ export const Icons = {
   Logout,
   RenameIcon,
   UserIcon,
+  UpArrowIcon,
 
   // sidebar
   EmailIcon,
