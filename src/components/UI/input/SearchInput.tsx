@@ -1,14 +1,14 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent } from 'react';
 import {
   TextField,
   MenuItem,
   Select,
   InputAdornment,
   styled,
-  SelectChangeEvent,
-} from "@mui/material";
-import { Icons } from "../../../assets";
-import { REDUCER_ACTION } from "../../../utils/general/reducerFunc";
+  SelectChangeEvent
+} from '@mui/material';
+import { Icons } from '../../../assets';
+import { REDUCER_ACTION } from '../../../utils/general/reducerFunc';
 
 const UpArrowIconComponent: React.FC = () => <Icons.UpArrowIcon />;
 
@@ -77,19 +77,15 @@ export const SearchInput: React.FC<PROPS> = ({ data, dispatch, search }) => {
           </InputAdornment>
         ),
         endAdornment: (
-          <InputAdornment position="end" sx={{ display: "flex", gap: 1 }}>
+          <InputAdornment position="end" sx={{ display: 'flex', gap: 1 }}>
             <StyledSelect
               className="selected"
               value={search.states}
               onChange={handleStateChange}
               IconComponent={UpArrowIconComponent}
             >
-              {data.states?.map(option => (
-                <MenuItem
-                  key={option.value}
-                  value={option.value}
-                  className="selected"
-                >
+              {data.states?.map((option) => (
+                <MenuItem key={option.value} value={option.value} className="selected">
                   {option.label}
                 </MenuItem>
               ))}
@@ -101,7 +97,7 @@ export const SearchInput: React.FC<PROPS> = ({ data, dispatch, search }) => {
               displayEmpty
               IconComponent={UpArrowIconComponent}
             >
-              {data.category?.map(option => (
+              {data.category?.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>
@@ -114,7 +110,7 @@ export const SearchInput: React.FC<PROPS> = ({ data, dispatch, search }) => {
               displayEmpty
               IconComponent={UpArrowIconComponent}
             >
-              {data.subCategory?.map(option => (
+              {data.subCategory?.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>
@@ -126,67 +122,67 @@ export const SearchInput: React.FC<PROPS> = ({ data, dispatch, search }) => {
               onChange={handleCountryChange}
               IconComponent={UpArrowIconComponent}
             >
-              {data.country?.map(option => (
+              {data.country?.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>
               ))}
             </StyledSelect>
           </InputAdornment>
-        ),
+        )
       }}
     />
   );
 };
 
 const StyledInput = styled(TextField)(() => ({
-  height: "45px",
-  border: "1px solid #BDBDBD",
-  borderRadius: "10px",
-  background: "white",
-  padding: "0 19px",
-  display: "flex",
-  justifyContent: "center",
-  color: "#848181",
-  ".search_icon": {
-    cursor: "pointer",
+  height: '45px',
+  border: '1px solid #BDBDBD',
+  borderRadius: '10px',
+  background: 'white',
+  padding: '0 19px',
+  display: 'flex',
+  justifyContent: 'center',
+  color: '#848181',
+  '.search_icon': {
+    cursor: 'pointer'
   },
-  ":hover": {
-    border: "1px solid #8639B5",
+  ':hover': {
+    border: '1px solid #8639B5'
   },
-  ".MuiInputBase-input": {
-    fontSize: "16px",
-    fontWeight: "400",
-    position: "relative",
+  '.MuiInputBase-input': {
+    fontSize: '16px',
+    fontWeight: '400',
+    position: 'relative'
   },
-  "& input:-webkit-autofill, & input:-webkit-autofill:hover, & input:-webkit-autofill:focus, & input:-webkit-autofill:active":
+  '& input:-webkit-autofill, & input:-webkit-autofill:hover, & input:-webkit-autofill:focus, & input:-webkit-autofill:active':
     {
-      WebkitTransition: "color 9999s ease-out, background-color 9999s ease-out",
-      WebkitTransitionDelay: "9999s",
+      WebkitTransition: 'color 9999s ease-out, background-color 9999s ease-out',
+      WebkitTransitionDelay: '9999s'
     },
-  "& fieldset": { border: "none" },
-  "& ::-webkit-input-placeholder": {
-    color: "#FFFF",
+  '& fieldset': { border: 'none' },
+  '& ::-webkit-input-placeholder': {
+    color: '#FFFF'
   },
   "input[type='search']::-webkit-search-cancel-button": {
-    display: "none",
-  },
+    display: 'none'
+  }
 }));
 
 const StyledSelect = styled(Select)(() => ({
   svg: {
-    height: "20px",
-    width: "20px",
-    transition: "transform 0.2s ease-in-out",
+    height: '20px',
+    width: '20px',
+    transition: 'transform 0.2s ease-in-out'
   },
-  "&.Mui-focused svg, &.Mui-active svg": {
-    transform: "rotate(180deg)",
+  '&.Mui-focused svg, &.Mui-active svg': {
+    transform: 'rotate(180deg)'
   },
-  " .MuiOutlinedInput-input": {
-    paddingRight: "16px",
+  ' .MuiOutlinedInput-input': {
+    paddingRight: '16px'
   },
-  "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
+  '& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input':
     {
-      paddingRight: 4,
-    },
+      paddingRight: 4
+    }
 }));
