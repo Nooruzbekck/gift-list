@@ -16,14 +16,14 @@ import Profile from './icons/header/profile-icon.svg?react';
 
 // sidebar
 import ChoosenPerson from './icons/sidebar/chosen-person.svg?react';
-import DateIcon from './icons/sidebar/date-icon.svg';
-import EmailIcon from './icons/sidebar/email-icon.svg';
-import Employees from './icons/sidebar/employees-icon.svg';
-import ListIcon from './icons/sidebar/list-icon.svg';
-import MessageIcon from './icons/sidebar/message-icon.svg';
-import NotLike from './icons/sidebar/not-like-icon.svg';
-import PresentIcon from './icons/sidebar/present-icon.svg';
-import ResumseList from './icons/sidebar/resume-list-icon.svg';
+import DateIcon from './icons/sidebar/date-icon.svg?react';
+import EmailIcon from './icons/sidebar/email-icon.svg?react';
+import Employees from './icons/sidebar/employees-icon.svg?react';
+import ListIcon from './icons/sidebar/list-icon.svg?react';
+import MessageIcon from './icons/sidebar/message-icon.svg?react';
+import NotLike from './icons/sidebar/not-like-icon.svg?react';
+import PresentIcon from './icons/sidebar/present-icon.svg?react';
+import ResumseList from './icons/sidebar/resume-list-icon.svg?react';
 
 // other
 import OpenEye from './icons/other/open-eye-icon.svg?react';
@@ -39,6 +39,7 @@ import Logout from './icons/other/logout-icon.svg?react';
 import RenameIcon from './icons/other/rename-icon.svg?react';
 import UserIcon from './icons/other/user-icon.svg?react';
 import UpArrowIcon from './icons/other/up-arrow.svg?react';
+import OptionIcon from './icons/other/option-icon.svg?react';
 
 export const Icons = {
   OpenEye,
@@ -58,6 +59,7 @@ export const Icons = {
   UserIcon,
   UpArrowIcon,
   Profile,
+  OptionIcon,
 
   // sidebar
   EmailIcon,
