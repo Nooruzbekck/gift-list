@@ -49,6 +49,12 @@ export const SearchInput: React.FC<PROPS> = ({
 };
 
 const StyledOutlinedInput = styled(OutlinedInput)(() => ({
+  fontSize: '16px',
+  fontWeight: '400',
+  height: '40px',
+  borderRadius: '8px',
+  padding: '0 19px',
+  color: '#8D949E',
   '& .MuiOutlinedInput-notchedOutline': {
     borderColor: '#BDBDBD'
   },
