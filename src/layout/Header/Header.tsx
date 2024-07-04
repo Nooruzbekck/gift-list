@@ -60,10 +60,12 @@ export const Header = () => {
           position="start"
           placeholder="Поиск"
         />
+
         <ContainerAction>
           <ButtonIcon onClick={handleNotification}>
             <Icons.Notification />
           </ButtonIcon>
+
           <NotificationMenu
             notifications={notification}
             anchorEl={notificationAnchorEl}
@@ -71,10 +73,12 @@ export const Header = () => {
             onClick={() => {}}
             onClose={() => setIsActiveMenu('')}
           />
+
           <ContainerProfileName>
             <ButtonIcon onClick={handleProfileMenuOpen}>
               <Icons.Profile />
             </ButtonIcon>
+
             <StyledTypographyName>
               {userName ? (
                 <WrapperName>
@@ -84,6 +88,7 @@ export const Header = () => {
                   </ButtonIcon>
                 </WrapperName>
               ) : null}
+
               <Menu
                 menus={menus}
                 anchorEl={anchorEl}
@@ -95,16 +100,20 @@ export const Header = () => {
           </ContainerProfileName>
         </ContainerAction>
       </StyledToolbar>
+
       <Modal open={isActive === 'profile-logout'} onClose={() => setIsActiveMenu('')}>
         <WrapperModal>
           <StyledLogout>
             <Icons.Logout />
           </StyledLogout>
+
           <Description>Вы уверены что хотите выйти?</Description>
+
           <ContainerActions>
             <Button type="button" variant="outlined" onClick={() => setIsActiveMenu('')}>
               Отмена
             </Button>
+
             <Button
               onClick={() => {
                 console.log('render');
@@ -122,9 +131,10 @@ export const Header = () => {
 
 const StyledHeader = styled(AppBar)(() => ({
   height: '86px',
+  background: '#FFFFFF',
+
   display: 'flex',
-  justifyContent: 'center',
-  background: '#FFFFFF'
+  justifyContent: 'center'
 }));
 
 const StyledToolbar = styled(Toolbar)(() => ({
@@ -132,6 +142,7 @@ const StyledToolbar = styled(Toolbar)(() => ({
   justifyContent: 'space-between',
   gap: '25px',
   padding: '0 45px 0 20px',
+
   '.MuiBox-root': {
     display: 'flex',
     alignItems: 'center',
@@ -159,11 +170,13 @@ const ContainerProfileName = styled('div')(() => ({
 const WrapperName = styled(Box)(() => ({
   display: 'flex',
   alignItems: 'center',
+
   span: {
     color: 'rgb(2, 2, 2)',
     fontWeight: '400',
     whiteSpace: 'nowrap'
   },
+
   svg: {
     cursor: 'pointer'
   }
@@ -184,6 +197,7 @@ const StyledLogout = styled('div')(() => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+
   svg: {
     width: '33px',
     height: '35px',
@@ -200,10 +214,12 @@ const Description = styled('p')(() => ({
 const ContainerActions = styled('div')(() => ({
   display: 'flex',
   gap: '16px',
+
   button: {
     fontSize: '14px',
     fontWeight: '500'
   },
+
   '& button:last-child': {
     background: '#E53535',
     color: 'white'

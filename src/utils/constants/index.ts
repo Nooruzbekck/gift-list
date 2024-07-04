@@ -43,12 +43,14 @@ export const notification = [
     id: 'e2',
     imageUrl: 'https://www.fotoprizer.ru/img/131217-021219-ft.jpg',
     date: '25.05.2022',
-    message: 'было забронировано анонимным пользователем',
+    message:
+      'было забронировано анонимным пользователем было забронировано анонимным пользователем было забронировано анонимным пользователем',
     userName: 'Название подарка'
   },
   {
     id: 'e3',
-    imageUrl: 'https://cdn.forbes.ru/files/c/375x210/gallery_images/gettyimages-684235780.jpg__1597148210__64239.jpg',
+    imageUrl:
+      'https://cdn.forbes.ru/files/c/375x210/gallery_images/gettyimages-684235780.jpg__1597148210__64239.jpg',
     date: '25.05.2022',
     message: 'было забронировано Аида Мамытбек',
     userName: 'Название подарка'
@@ -69,14 +71,16 @@ export const notification = [
   },
   {
     id: 'e6',
-    imageUrl: 'https://img06.rl0.ru/afisha/e780x-i/daily.afisha.ru/uploads/images/e/3f/e3fb68320c4200069dd1e6b4dc1c18e6.png',
+    imageUrl:
+      'https://img06.rl0.ru/afisha/e780x-i/daily.afisha.ru/uploads/images/e/3f/e3fb68320c4200069dd1e6b4dc1c18e6.png',
     date: '25.05.2022',
     message: 'добавил желаемый подарок',
     userName: 'Самат Окенов'
   },
   {
     id: 'e7',
-    imageUrl: 'https://media.krasota.ru/filer_public/d9/2e/d92e1649-862e-4f72-a61d-ef64686c5c13/rokhit.jpg',
+    imageUrl:
+      'https://media.krasota.ru/filer_public/d9/2e/d92e1649-862e-4f72-a61d-ef64686c5c13/rokhit.jpg',
     date: '25.05.2022',
     message: 'было забронировано Аида Мамытбек',
     userName: 'Самат Окенов'

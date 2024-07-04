@@ -20,34 +20,51 @@ export const NotificationMenuItem: React.FC<Props> = ({
     <StyledSecondMenuItem onClick={onClose}>
       <Wrapper>
         <img src={imageUrl} alt="" />
-        <p>
-          {userName}
-          {message}
-        </p>
+
+        <ContainerMessage>
+          <Message>
+            <span>{userName}</span> {message}
+          </Message>
+
+          <Date>{date}</Date>
+        </ContainerMessage>
       </Wrapper>
-      <p>{date}</p>
     </StyledSecondMenuItem>
   );
 };
 
 const StyledSecondMenuItem = styled(MenuItem)(() => ({
   display: 'flex',
-  flexDirection: 'column',
+  alignContent: 'space-between',
   gap: '10px',
   marginTop: '16px'
+}));
+
+const ContainerMessage = styled('div')(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+
+  span: {
+    color: '#3772FF'
+  }
+}));
+
+const Message = styled('p')(() => ({
+  display: '-webkit-box',
+  WebkitBoxOrient: 'vertical',
+  WebkitLineClamp: 2,
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'normal'
+}));
+
+const Date = styled('p')(() => ({
+  margin: '0'
 }));
 
 const Wrapper = styled('div')(() => ({
   display: 'flex',
   gap: '12px',
-
-  p: {
-    width: '400px',
-    gap: '10px',
-
-    display: 'flex',
-    flexWrap: 'wrap'
-  },
 
   '& > img': {
     width: '36px',
