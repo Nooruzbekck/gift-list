@@ -11,14 +11,25 @@ import {
 } from '@mui/material';
 import { sidebar } from '../utils/constants/side-bar';
 
-interface Props {
-  window?: () => Window;
-  drawerWidth: number;
-}
-
-export const SideBar = (props: Props) => {
-  const { window, drawerWidth } = props;
+export const SideBar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const focusedItemRef = React.useRef<string | null>(null);
+
+  React.useEffect(() => {
+    const lastFocusedItem = sessionStorage.getItem('lastFocusedItem');
+    if (lastFocusedItem) {
+      focusedItemRef.current = lastFocusedItem;
+    }
+  }, []);
+
+  React.useEffect(() => {
+    if (focusedItemRef.current) {
+      const element = document.getElementById(focusedItemRef.current);
+      if (element) {
+        element.focus();
+      }
+    }
+  }, [mobileOpen]);
 
   const handleDrawerClose = () => {
     setMobileOpen(false);
@@ -26,12 +37,16 @@ export const SideBar = (props: Props) => {
 
   const handleDrawerTransitionEnd = () => {};
 
+  const handleFocus = (id: string) => {
+    sessionStorage.setItem('lastFocusedItem', id);
+  };
+
   const drawer = (
     <div>
       <List>
         {sidebar.map(({ title, Icon, id }) => (
           <ListItem key={id} disablePadding>
-            <StyledListItemButton>
+            <StyledListItemButton id={id} onFocus={() => handleFocus(id)}>
               <ListItemIcon>
                 <Icon />
               </ListItemIcon>
@@ -43,21 +58,18 @@ export const SideBar = (props: Props) => {
     </div>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
-
   return (
     <>
       <Box>
         <Container component="nav">
           <Drawer
-            container={container}
             open={mobileOpen}
             onTransitionEnd={handleDrawerTransitionEnd}
             onClose={handleDrawerClose}
           >
             {drawer}
           </Drawer>
-          <DrawerContainer variant="permanent" drawerWidth={drawerWidth}>
+          <DrawerContainer variant="permanent">
             <DrawerHeader>Gift list</DrawerHeader>
             {drawer}
           </DrawerContainer>
@@ -67,10 +79,6 @@ export const SideBar = (props: Props) => {
   );
 };
 
-interface StyledDrawerProps {
-  drawerWidth: number;
-}
-
 const Container = styled(Box)(() => ({
   '.MuiDrawer-paper': {
     height: '100vh',
@@ -78,8 +86,12 @@ const Container = styled(Box)(() => ({
   }
 }));
 
-const DrawerContainer = styled(Drawer)<StyledDrawerProps>(({ drawerWidth }) => ({
-  '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, padding: '20px' }
+const DrawerContainer = styled(Drawer)(() => ({
+  '& .MuiDrawer-paper': {
+    boxSizing: 'border-box',
+    width: '294px',
+    padding: '20px'
+  }
 }));
 
 const StyledListItemButton = styled(ListItemButton)(() => ({
@@ -92,10 +104,11 @@ const StyledListItemButton = styled(ListItemButton)(() => ({
   '&:active': {
     background: 'rgba(255, 255, 255, 1)'
   },
+
   '&:focus': {
-    background: '#FFFFFF',
-    opacity: '10%',
-    borderRadius: '8px'
+    background: '#ffffff27',
+    borderRadius: '8px',
+    color: 'red'
   }
 }));
 

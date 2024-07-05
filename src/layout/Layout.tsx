@@ -1,24 +1,22 @@
-import { AppBar } from '@mui/material';
 import { SideBar } from './SideBar';
 import { Header } from './Header/Header';
-const drawerWidth = 294;
-
+import { styled } from '@mui/material';
 const Layout = () => {
   return (
     <div>
-      <section style={{ display: 'flex', gap: '10px' }}>
-        <AppBar
-          position="fixed"
-          sx={{
-            width: { sm: `calc(100% - ${drawerWidth}px)` }
-          }}
-        >
-          <Header />
-        </AppBar>
-        <SideBar drawerWidth={drawerWidth} />
-      </section>
+      <Header />
+      <main>
+        <SideBar />
+        <WrapperOutlet>
+          <h1>Outlet</h1>
+        </WrapperOutlet>
+      </main>
     </div>
   );
 };
 
 export default Layout;
+
+const WrapperOutlet = styled('div')(() => ({
+  marginLeft: '294px',
+}));
