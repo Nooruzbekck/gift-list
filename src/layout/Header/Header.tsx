@@ -132,9 +132,10 @@ export const Header = () => {
 const StyledHeader = styled(AppBar)(() => ({
   height: '86px',
   background: '#FFFFFF',
-
   display: 'flex',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  marginLeft: '294px',
+  width: 'calc(100% - 294px)'
 }));
 
 const StyledToolbar = styled(Toolbar)(() => ({
